@@ -1,17 +1,20 @@
 import time
   
 def countdown(t):
-    
+    x = t/2
+
     while t>=0:
-        mins, secs = divmod(t, 60)
-        timer = '{:02d}:{:02d}'.format(mins, secs)
-        print(timer, end="\r")
+        min, sec = divmod(t, 60)
+        print(min, ':', sec, end='\r')
         time.sleep(1)
-        t -= 1
-      
+        t = t - 1
+
+        if t == x:
+            print('Half time passed')
+
     print('Timer has ended.')
   
   
 t = input("Enter the time in seconds: ")
-  
+
 countdown(int(t))
